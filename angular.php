@@ -22,6 +22,8 @@ commit 1
 
 commit 2
 
+commit 3
+
 <script>
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
