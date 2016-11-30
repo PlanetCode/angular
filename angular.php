@@ -26,6 +26,8 @@ commit 3
 
 cherrypick 1
 
+cherrypick 2
+
 <script>
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
