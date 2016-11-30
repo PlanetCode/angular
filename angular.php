@@ -18,6 +18,11 @@ this is development change
 
 </div>
 
+commit 1
+
+commit 2
+
+commit 3
 
 <script>
 var app = angular.module('myApp', []);
