@@ -6,4 +6,3 @@ php:
 script: phpunit Test.php
 notifications:
   slack: its-b:0XQUVV6AT4X0QcW7bODX0mjs
-travis encrypt "its-b:0XQUVV6AT4X0QcW7bODX0mjs" --add notifications.slack
