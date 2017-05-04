@@ -6,6 +6,7 @@
 <div >
 	<div >
  	<p>Enter your favourite color and see the magic</p>
+ 	<?php echo 'abc....'; ?>
 	<input  name="mycolor" id="mycolor" ng-model="myColor" value="{{myColor}}" />
 	</div>
 </div>
