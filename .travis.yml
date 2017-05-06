@@ -2,5 +2,11 @@ language: php
 php:
   - 5.5
 
+script:
+
+  composer install --dev
+  phpunit --configuration phpunit.xml --coverage-text
+
+
 notifications:
   slack: its-b:0XQUVV6AT4X0QcW7bODX0mjs
