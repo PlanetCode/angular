@@ -2,18 +2,5 @@ language: php
 php:
   - 5.5
 
-before_install:
-  - rm -rf ~/.gnupg
-  - sudo apt-get install xvfb
-
-before_script:
-  ## PHP_CodeSniffer
-  - pear install pear/PHP_CodeSniffer
-  - phpenv rehash
-  - phpcs -i
-  - phpenv rehash
-  - phpcs --config-set error_severity 1
-  - phpcs --config-set warning_severity 0
-
 notifications:
   slack: its-b:0XQUVV6AT4X0QcW7bODX0mjs
