@@ -15,12 +15,13 @@ before_script:
   - phpenv rehash
   - phpcs -i
   - phpenv rehash
+  - phpcs --config-set installed_paths $(pear config-get php_dir)/PHP/CodeSniffer/Standards/PHPCompatibility
   - phpcs --config-set error_severity 1
   - phpcs --config-set warning_severity 0
 
 script:
   ## PHP_CodeSniffer
-  - phpcs --standard=PEAR --runtime-set testVersion 5.3-5.5
+  - phpcs --standard=PHPCompatibility --runtime-set testVersion 5.3-5.5
   - if find . -name "*.php" ! -path "./node_modules/*" -exec php -l {} 2>&1 \; | grep "syntax error, unexpected"; then exit 1; fi
 
 notifications:
