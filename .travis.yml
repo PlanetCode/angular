@@ -10,16 +10,18 @@ before_install:
 
 before_script:
   ## PHP_CodeSniffer
-  - composer global require "squizlabs/php_codesniffer=*"
+  - pear install pear/PHP_CodeSniffer
+  - git clone git://github.com/wimg/PHPCompatibility.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/PHPCompatibility
+  - phpcs --config-set installed_paths $(pear config-get php_dir)/PHP/CodeSniffer/Standards/PHPCompatibility
   - phpenv rehash
-  - which phpcs
+  - phpcs -i
   - phpenv rehash
   - phpcs --config-set error_severity 1
   - phpcs --config-set warning_severity 0
 
 script:
   ## PHP_CodeSniffer
-  - phpcs --standard=PHPCompatibility --runtime-set testVersion 5.3-5.5 $(find ./ -name '*.php')
+  - phpcs --standard=PHPCompatibility --runtime-set testVersion 5.3-5.5
   - if find . -name "*.php" ! -path "./node_modules/*" -exec php -l {} 2>&1 \; | grep "syntax error, unexpected"; then exit 1; fi
 
 notifications:
