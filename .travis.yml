@@ -11,7 +11,6 @@ before_install:
 before_script:
   ## PHP_CodeSniffer
   - composer global require "squizlabs/php_codesniffer=*"
-  - git clone git://github.com/wimg/PHPCompatibility.git ~/.composer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PHPCompatibility
   - phpenv rehash
   - which phpcs
   - phpenv rehash
