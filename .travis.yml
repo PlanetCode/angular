@@ -1,5 +1,6 @@
-dist: trusty
+sudo: required
 language: php
+dist: trusty
 php:
   - 5.5
 
@@ -19,7 +20,7 @@ before_script:
 
 script:
   ## PHP_CodeSniffer
-  - phpcs --standard=PHPCompatibility --runtime-set testVersion 5.3-5.5 $(find ./ -name '*.php')
+  - phpcs --standard=PHPCompatibility --runtime-set testVersion 5.3-5.5
   - if find . -name "*.php" ! -path "./node_modules/*" -exec php -l {} 2>&1 \; | grep "syntax error, unexpected"; then exit 1; fi
 
 notifications:
