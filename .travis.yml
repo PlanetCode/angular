@@ -11,7 +11,6 @@ before_install:
 before_script:
   ## PHP_CodeSniffer
   - pear install pear/PHP_CodeSniffer
-  - git clone git://github.com/wimg/PHPCompatibility.git $(pear config-get php_dir)/PHP/CodeSniffer/Standards/PHPCompatibility
   - phpenv rehash
   - phpcs -i
   - phpenv rehash
@@ -20,7 +19,7 @@ before_script:
 
 script:
   ## PHP_CodeSniffer
-  - phpcs --standard=PHPCompatibility --runtime-set testVersion 5.3-5.5
+  - phpcs --standard=PEAR
   - if find . -name "*.php" ! -path "./node_modules/*" -exec php -l {} 2>&1 \; | grep "syntax error, unexpected"; then exit 1; fi
 
 notifications:
