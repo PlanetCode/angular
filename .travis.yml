@@ -13,7 +13,7 @@ before_script:
   - composer global require "squizlabs/php_codesniffer=*"
   - git clone git://github.com/wimg/PHPCompatibility.git ~/.composer/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PHPCompatibility
   - phpenv rehash
-  - ./vendor/bin/phpcs -i
+  - which phpcs
   - phpenv rehash
   - phpcs --config-set error_severity 1
   - phpcs --config-set warning_severity 0
